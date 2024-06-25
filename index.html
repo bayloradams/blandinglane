@@ -14,6 +14,13 @@
             margin-top: 20%;
             color: black;
         }
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+        .fade-in.visible {
+            opacity: 1;
+        }
         p {
             font-size: 56px; /* Twice the size of the previous 28px */
             font-weight: 500; /* Less bold */
@@ -21,9 +28,9 @@
         .links {
             margin-top: 20px;
             opacity: 0;
-            transition: opacity 2s;
+            transition: opacity 1s; /* Fade in twice as quick */
         }
-        .links.fade-in {
+        .links.visible {
             opacity: 1;
         }
         .links a {
@@ -41,7 +48,7 @@
 </head>
 <body>
     <div>
-        <p>blanding lane</p>
+        <p id="blanding-lane" class="fade-in">blanding lane</p>
         <div class="links" id="links">
             <a href="https://withjuly.com" target="_blank">July</a>
             <a href="https://machindustries.com" target="_blank">Mach Industries</a>
@@ -50,7 +57,14 @@
     </div>
     <script>
         window.onload = function() {
-            document.getElementById('links').classList.add('fade-in');
+            const blandingLane = document.getElementById('blanding-lane');
+            const links = document.getElementById('links');
+
+            blandingLane.classList.add('visible');
+
+            blandingLane.addEventListener('transitionend', () => {
+                links.classList.add('visible');
+            });
         };
     </script>
 </body>
