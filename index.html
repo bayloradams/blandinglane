@@ -28,7 +28,7 @@
         .links {
             margin-top: 20px;
             opacity: 0;
-            transition: opacity 2s; /* Same fade-in duration as blanding lane */
+            transition: opacity 2s 0.2s; /* Same fade-in duration as blanding lane with a short delay */
         }
         .links.visible {
             opacity: 1;
@@ -49,7 +49,7 @@
 <body>
     <div>
         <p id="blanding-lane" class="fade-in">blanding lane</p>
-        <div class="links fade-in" id="links">
+        <div class="links" id="links">
             <a href="https://withjuly.com" target="_blank">July</a>
             <a href="https://machindustries.com" target="_blank">Mach Industries</a>
             <a href="https://www.neros.tech" target="_blank">Neros</a>
@@ -61,7 +61,10 @@
             const links = document.getElementById('links');
 
             blandingLane.classList.add('visible');
-            links.classList.add('visible');
+
+            setTimeout(() => {
+                links.classList.add('visible');
+            }, 200); /* Short delay of 200ms */
         };
     </script>
 </body>
