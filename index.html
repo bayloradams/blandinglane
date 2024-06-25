@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blandinglane</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 
         body {
             font-family: "Times New Roman", Times, serif;
@@ -13,6 +13,10 @@
             text-align: center;
             margin-top: 20%;
             color: black;
+        }
+        p {
+            font-size: 28px; /* Twice the original font size */
+            font-weight: bold; /* Make the text bold */
         }
         .links {
             margin-top: 20px;
@@ -24,10 +28,11 @@
         }
         .links a {
             font-family: 'Inter', sans-serif;
+            font-weight: bold; /* Make the links bold */
             color: #7D7D7D;
             text-decoration: underline;
             margin: 0 15px;
-            transition: color 0.3s;
+            transition: color 0.3s, color 0.3s 0.3s; /* Add delay to the transition */
         }
         .links a:hover {
             color: #EA6A3D;
