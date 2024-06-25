@@ -16,7 +16,7 @@
         }
         .fade-in {
             opacity: 0;
-            transition: opacity 2s; /* Slow fade-in for blanding lane */
+            transition: opacity 2s; /* Slow fade-in for both blanding lane and links */
         }
         .fade-in.visible {
             opacity: 1;
@@ -49,7 +49,7 @@
 <body>
     <div>
         <p id="blanding-lane" class="fade-in">blanding lane</p>
-        <div class="links" id="links">
+        <div class="links fade-in" id="links">
             <a href="https://withjuly.com" target="_blank">July</a>
             <a href="https://machindustries.com" target="_blank">Mach Industries</a>
             <a href="https://www.neros.tech" target="_blank">Neros</a>
@@ -61,10 +61,7 @@
             const links = document.getElementById('links');
 
             blandingLane.classList.add('visible');
-
-            blandingLane.addEventListener('transitionend', () => {
-                links.classList.add('visible');
-            });
+            links.classList.add('visible');
         };
     </script>
 </body>
