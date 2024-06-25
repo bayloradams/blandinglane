@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blandinglane</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap');
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 14px;
+            text-align: center;
+            margin-top: 20%;
+            color: black;
+        }
+        .links {
+            margin-top: 20px;
+            opacity: 0;
+            transition: opacity 2s;
+        }
+        .links.fade-in {
+            opacity: 1;
+        }
+        .links a {
+            font-family: 'Inter', sans-serif;
+            color: #7D7D7D;
+            text-decoration: underline;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .links a:hover {
+            color: #EA6A3D;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>blandinglane</p>
+        <div class="links" id="links">
+            <a href="https://withjuly.com" target="_blank">July</a>
+            <a href="https://machindustries.com" target="_blank">Mach Industries</a>
+            <a href="https://www.neros.tech" target="_blank">Neros</a>
+        </div>
+    </div>
+    <script>
+        window.onload = function() {
+            document.getElementById('links').classList.add('fade-in');
+        };
+    </script>
+</body>
+</html>
