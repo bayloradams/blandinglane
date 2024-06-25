@@ -28,7 +28,7 @@
         .links {
             margin-top: 20px;
             opacity: 0;
-            transition: opacity 0.5s; /* Faster fade-in for links */
+            transition: opacity 2s; /* Same fade-in duration as blanding lane */
         }
         .links.visible {
             opacity: 1;
@@ -63,9 +63,7 @@
             blandingLane.classList.add('visible');
 
             blandingLane.addEventListener('transitionend', () => {
-                setTimeout(() => {
-                    links.classList.add('visible');
-                }, 100); /* Slight delay to ensure smooth transition */
+                links.classList.add('visible');
             });
         };
     </script>
